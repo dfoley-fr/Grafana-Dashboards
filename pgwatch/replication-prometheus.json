@@ -816,14 +816,14 @@
         "datasource": {
           "type": "grafana-amazonprometheus-datasource"
         },
-        "definition": "label_values(pgwatch_instance_up, dbname)",
+        "definition": "label_values(dbname)",
         "hide": 0,
         "includeAll": true,
         "label": "Database",
         "multi": true,
         "name": "dbname",
         "options": [],
-        "query": "label_values(pgwatch_instance_up, dbname)",
+        "query": "label_values(dbname)",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,

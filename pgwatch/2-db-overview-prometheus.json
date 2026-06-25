@@ -3174,7 +3174,7 @@
           "spec": {
             "qryType": 1,
             "query": "label_values(dbname)",
-            "refId": "PrometheusVariableQueryEditor-VariableQuery"
+            "refId": "StandardVariableQuery"
           },
           "version": "v0"
         },

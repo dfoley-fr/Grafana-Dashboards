@@ -1200,12 +1200,12 @@
         "datasource": {
           "type": "grafana-amazonprometheus-datasource"
         },
-        "definition": "label_values(pgwatch_instance_up, dbname)",
+        "definition": "label_values(dbname)",
         "includeAll": false,
         "label": "Database",
         "name": "dbname",
         "options": [],
-        "query": "label_values(pgwatch_instance_up, dbname)",
+        "query": "label_values(dbname)",
         "refresh": 1,
         "regex": "",
         "sort": 1,
