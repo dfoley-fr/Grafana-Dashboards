@@ -3573,7 +3573,7 @@
         },
         "definition": "label_values(dbname)",
         "hide": "dontHide",
-        "includeAll": true,
+        "includeAll": false,
         "label": "Database",
         "multi": false,
         "name": "dbname",
