@@ -736,7 +736,7 @@
           "value": "demo"
         },
         "datasource": {
-          "type": "prometheus"
+          "type": "grafana-amazonprometheus-datasource"
         },
         "definition": "label_values(dbname)",
         "includeAll": false,

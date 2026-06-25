@@ -851,7 +851,7 @@
         },
         "datasource": {
           "default": true,
-          "type": "prometheus"
+          "type": "grafana-amazonprometheus-datasource"
         },
         "definition": "label_values(dbname)",
         "includeAll": false,
@@ -873,7 +873,7 @@
         },
         "datasource": {
           "default": true,
-          "type": "prometheus"
+          "type": "grafana-amazonprometheus-datasource"
         },
         "definition": "label_values(pgwatch_table_stats_seq_scan{dbname=~\"$dbname\"}, table_full_name) ",
         "includeAll": false,

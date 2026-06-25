@@ -695,7 +695,7 @@
           "value": "postgres"
         },
         "datasource": {
-          "type": "prometheus"
+          "type": "grafana-amazonprometheus-datasource"
         },
         "definition": "label_values(pgwatch_instance_up, dbname)",
         "hide": 0,
