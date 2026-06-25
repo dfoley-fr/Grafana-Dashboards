@@ -63,8 +63,7 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
          },
          "description": "Number of Prometheus RDS exporter",
          "gridPos": {
@@ -92,8 +91,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "Status of RDS exporters",
          "fieldConfig": {
@@ -142,8 +141,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "Number of errors reported by RDS exporters",
          "fieldConfig": {
@@ -188,8 +187,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "Number of AWS accounts monitored by RDS exporters",
          "gridPos": {
@@ -218,8 +217,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "Number of AWS RDS instances monitored by RDS exporters",
          "gridPos": {
@@ -248,8 +247,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "List of RDS exporters",
          "gridPos": {
@@ -328,8 +327,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "Number of RDS exporter errors per minute",
          "fieldConfig": {
@@ -403,8 +402,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "Number of HTTP calls to AWS APIs",
          "fieldConfig": {
@@ -453,8 +452,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "Total calls to AWS APIs to monitor RDS instances",
          "fieldConfig": {

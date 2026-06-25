@@ -63,8 +63,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "Engine",
          "fieldConfig": {
@@ -111,8 +111,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "Cluster engine version",
          "fieldConfig": {
@@ -159,8 +159,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "Number of current Aurora Capacity Units used by this cluster",
          "fieldConfig": {
@@ -203,8 +203,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "Number of instances in the cluster",
          "fieldConfig": {
@@ -245,8 +245,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "Number of instances by instance class type",
          "fieldConfig": {
@@ -302,8 +302,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "List of RDS instances in the clusters",
          "fieldConfig": {
@@ -559,8 +559,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "Minimum/Maximum number of Aurora capacity units (ACUs) for a DB instance in an Aurora Serverless v2 cluster.",
          "fieldConfig": {
@@ -611,8 +611,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "",
          "fieldConfig": {
@@ -686,8 +686,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "TODO",
          "fieldConfig": {

@@ -63,8 +63,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "RDS Engine",
          "fieldConfig": {
@@ -111,8 +111,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "RDS Engine version",
          "fieldConfig": {
@@ -159,8 +159,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "Time since RDS instance creation",
          "fieldConfig": {
@@ -205,8 +205,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "RDS instance class (db.<family>.<instance size>)",
          "fieldConfig": {
@@ -253,8 +253,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "Total number of vCPU",
          "fieldConfig": {
@@ -297,8 +297,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "Total memory",
          "fieldConfig": {
@@ -343,8 +343,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "Total disk storage",
          "fieldConfig": {
@@ -389,8 +389,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "Storage class type)",
          "fieldConfig": {
@@ -437,8 +437,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "Multi Availability Zone deployment",
          "fieldConfig": {
@@ -499,8 +499,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "If instance is part of a DB cluster (Aurora or RDS Multi-AZ DB cluster): `writer` or `reader`. Otherwise role is `primary` for standalone DB instance and `replica` for an instance configured as replica.",
          "fieldConfig": {
@@ -547,8 +547,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "Number of RDS instances replicating this instance",
          "fieldConfig": {
@@ -590,8 +590,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "Primary instance name for a replica)",
          "fieldConfig": {
@@ -638,8 +638,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "AWS RDS instance internal reference",
          "fieldConfig": {
@@ -686,8 +686,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "Certificate Authority bundle used by this RDS instance for TLS connections",
          "fieldConfig": {
@@ -734,8 +734,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "AWS RDS snapshot retention. This is not related to AWS Backup service",
          "fieldConfig": {
@@ -796,8 +796,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "Days before end of standard support. After the standard support period ends, AWS will continue providing security patches and critical fixes for that engine version during the Extended Support window to give you more time to upgrade. But an additional Extended Support cost will be applied until you upgrade. See https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html",
          "fieldConfig": {
@@ -865,8 +865,8 @@
       {
          "collapsed": true,
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "Days before extended support end. RDS Extended Support is available for up to 3 years past the RDS end of standard support date for a major engine version. After this time, if instance has not been upgraded to major engine version to a supported version, then Amazon RDS will automatically upgrade your major engine version. We recommend that you upgrade to a supported major engine version as soon as possible. See https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/extended-support.html",
          "fieldConfig": {
@@ -931,8 +931,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "Current CPU usage",
          "fieldConfig": {
@@ -983,8 +983,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "Curent memory usage",
          "fieldConfig": {
@@ -1035,8 +1035,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "Current disk IOPS usage",
          "fieldConfig": {
@@ -1087,8 +1087,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "Current disk storage usage",
          "fieldConfig": {
@@ -1139,8 +1139,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "Replication lag for replica RDS instance",
          "fieldConfig": {
@@ -1192,8 +1192,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "Current RDS instance status",
          "fieldConfig": {
@@ -1328,8 +1328,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "Yes when RDS instance need a modification (e.g. Apply new parameter group settings). Modification could be scheduled during maintenance windows or triggered manually.",
          "fieldConfig": {
@@ -1383,8 +1383,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "AWS may required hardward or software maintenance. Maintenance could be scheduled during maintenance windows or triggered manually.",
          "fieldConfig": {
@@ -1448,8 +1448,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "A session is active when it's either running on CPU or waiting for a resource to become available so that it can proceed (e.g. IOPS or CPU). For optimal performances, you should not have more AAS than the total number of vCPU. Investigate AAS in RDS performance insights. See also https://www.kylehailey.com/post/setting-the-record-straight-a-comprehensive-guide-to-understanding-the-aas-metric-in-databases and https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.Overview.ActiveSessions.html",
          "fieldConfig": {
@@ -1577,8 +1577,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "Ratio of CPU usage",
          "fieldConfig": {
@@ -1651,8 +1651,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "The number of client network connections to the database instance",
          "fieldConfig": {
@@ -1698,8 +1698,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "Total of read and write disk IOPS regarding RDS instance IOPS limits. For optimal performances, you should not reach IOPS limits",
          "fieldConfig": {
@@ -1836,8 +1836,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "The amount of available Random Access Memory",
          "fieldConfig": {
@@ -1989,8 +1989,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "The average number of bytes read/write from disk per second regarding RDS instance disk throughput limits. For optimal performances, you should not reach disk throughput",
          "fieldConfig": {
@@ -2132,8 +2132,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "Amount of swap space used on the DB instance. There's nothing wrong with a used SWAP, but for optimial perfomance you should avoid frequent changes",
          "fieldConfig": {
@@ -2180,8 +2180,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "The average number of bytes received/transmitted per second from/to the network. Storage network metrics are specific to Aurora storage subsystem.",
          "fieldConfig": {
@@ -2389,8 +2389,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "Storage size per type. WAL only applied to PostgreSQL",
          "fieldConfig": {
@@ -2654,8 +2654,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "RDS instance status. Some AWS operations could not be performed when instance is not in 'available' status",
          "fieldConfig": {
@@ -2809,8 +2809,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "Ratio of free disk space",
          "fieldConfig": {
@@ -2895,8 +2895,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "The number of transactions currently used. Hard limit to 2 billion transactions (See Transaction ID Wraparound)",
          "fieldConfig": {
@@ -2964,8 +2964,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "Lag of PostgreSQL replica instances",
          "fieldConfig": {
@@ -3024,8 +3024,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "The RDS instance cannot use more disk IOPS than supported by the EC2 instance baseline, but it can burst 30 minutes at least once every 24 hours. See https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html",
          "fieldConfig": {
@@ -3167,8 +3167,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "If RDS storage autoscaling is enabled, display the current usage",
          "fieldConfig": {
@@ -3242,8 +3242,8 @@
       },
       {
          "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+            
          },
          "description": "The RDS instance cannot use more disk throughput than supported by the EC2 instance baseline, but it can burst 30 minutes at least once every 24 hours. See https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html",
          "fieldConfig": {
