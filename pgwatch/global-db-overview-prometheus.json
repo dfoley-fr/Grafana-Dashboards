@@ -3567,10 +3567,7 @@
       "kind": "QueryVariable",
       "spec": {
         "allowCustomValue": true,
-        "current": {
-          "text": "All",
-          "value": "$__all"
-        },
+        "current": {},
         "definition": "label_values(dbname)",
         "hide": "dontHide",
         "includeAll": false,
