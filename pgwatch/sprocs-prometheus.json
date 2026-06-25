@@ -37,8 +37,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
       "description": "Total number of functions/procedures by database",
       "fieldConfig": {
@@ -105,8 +105,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
       "description": "Functions by language",
       "fieldConfig": {
@@ -185,8 +185,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
       "description": "Function calls per second",
       "fieldConfig": {
@@ -282,8 +282,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
       "description": "Function execution time per second",
       "fieldConfig": {
@@ -392,8 +392,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
       "description": "Most called functions",
       "fieldConfig": {
@@ -568,8 +568,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
       "description": "Functions consuming the most time",
       "fieldConfig": {
@@ -757,8 +757,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
       "description": "Current function performance summary",
       "fieldConfig": {

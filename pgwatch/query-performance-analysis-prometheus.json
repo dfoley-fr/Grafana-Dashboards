@@ -37,8 +37,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
       "fieldConfig": {
         "defaults": {
@@ -134,8 +134,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+           
           },
           "expr": "topk($top_n, rate(pgwatch_stat_statements_calls{dbname=~\"$dbname\"}[$__rate_interval]))",
           "instant": false,
@@ -150,8 +150,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
       "fieldConfig": {
         "defaults": {
@@ -247,8 +247,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+           
           },
           "expr": "topk($top_n, rate(pgwatch_stat_statements_total_time{dbname=~\"$dbname\"}[$__rate_interval]))",
           "instant": false,
@@ -263,8 +263,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
       "fieldConfig": {
         "defaults": {
@@ -360,8 +360,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+           
           },
           "expr": "topk($top_n, rate(pgwatch_stat_statements_total_time{dbname=~\"$dbname\"}[$__rate_interval])/rate(pgwatch_stat_statements_calls{dbname=~\"$dbname\"}[$__rate_interval]))",
           "instant": false,
@@ -376,8 +376,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
       "description": "shared_blks_read",
       "fieldConfig": {
@@ -474,8 +474,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+           
           },
           "expr": "topk($top_n, \n  rate(pgwatch_stat_statements_shared_blks_read{dbname=~\"$dbname\"}[$__rate_interval]) * 8192\n)",
           "instant": false,
@@ -490,8 +490,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
       "description": "shared_blks_hit / (shared_blks_hit + shared_blks_read)\n\nNot the lowest at all, but the lowest among the top ~100 queries returned by the `stat_statements` metric",
       "fieldConfig": {
@@ -588,8 +588,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+           
           },
           "expr": "bottomk($top_n, \n  rate(pgwatch_stat_statements_shared_blks_hit{dbname=~\"$dbname\"}[$__rate_interval])\n  /\n  (\n    rate(pgwatch_stat_statements_shared_blks_hit{dbname=~\"$dbname\"}[$__rate_interval])\n    +\n    rate(pgwatch_stat_statements_shared_blks_read{dbname=~\"$dbname\"}[$__rate_interval])\n  )\n)",
           "instant": false,
@@ -604,8 +604,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
       "description": "shared_blks_written",
       "fieldConfig": {
@@ -702,8 +702,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+           
           },
           "expr": "topk($top_n, \n  rate(pgwatch_stat_statements_shared_blks_written{dbname=~\"$dbname\"}[$__rate_interval]) * 8192\n)",
           "instant": false,
@@ -718,8 +718,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
       "description": "(temp_blks_read + temp_blks_written) / calls",
       "fieldConfig": {
@@ -816,8 +816,8 @@
       "targets": [
         {
           "datasource": {
-            "type": "grafana-amazonprometheus-datasource",
-            "uid": "afq6r85ebh6v4c"
+            "type": "grafana-amazonprometheus-datasource"
+           
           },
           "expr": "topk($top_n, \n  (\n    rate(pgwatch_stat_statements_temp_blks_read{dbname=~\"$dbname\"}[$__rate_interval]) * 8192\n    +\n    rate(pgwatch_stat_statements_temp_blks_written{dbname=~\"$dbname\"}[$__rate_interval]) * 8192\n  )\n  /\n  rate(pgwatch_stat_statements_calls{dbname=~\"$dbname\"}[$__rate_interval])\n)",
           "instant": false,
@@ -845,8 +845,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
       "description": "Shared buffer reads from disk vs hits in memory",
       "fieldConfig": {
@@ -953,8 +953,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
       "description": "WAL bytes generated by queries",
       "fieldConfig": {
@@ -1054,8 +1054,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
       "description": "Temporary file usage indicating spill to disk due to work_mem limitations",
       "fieldConfig": {

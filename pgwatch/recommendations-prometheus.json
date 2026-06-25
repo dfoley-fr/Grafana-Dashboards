@@ -37,8 +37,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
       "description": "Unused indexes (no scans in recent period)",
       "fieldConfig": {
@@ -274,8 +274,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
       "description": "Duplicate indexes sharing same columns",
       "fieldConfig": {
@@ -483,8 +483,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
       "description": "Queries with low cache hit ratio",
       "fieldConfig": {
@@ -621,8 +621,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
       "description": "Queries with high I/O wait time",
       "fieldConfig": {
@@ -768,8 +768,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
       "description": "Current configuration settings that may need adjustment",
       "fieldConfig": {
@@ -868,8 +868,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
       "description": "Tables that may benefit from VACUUM or ANALYZE",
       "fieldConfig": {

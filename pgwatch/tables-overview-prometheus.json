@@ -37,8 +37,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
       "description": "Table scan activity: sequential vs index scans",
       "fieldConfig": {
@@ -138,8 +138,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
       "description": "Tuple operations: inserts, updates, deletes",
       "fieldConfig": {
@@ -244,8 +244,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
       "description": "Live vs dead tuples ratio",
       "fieldConfig": {
@@ -345,8 +345,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
       "description": "Table sizes in bytes",
       "fieldConfig": {
@@ -459,8 +459,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
       "description": "Vacuum and analyze operations",
       "fieldConfig": {
@@ -570,8 +570,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
       "description": "Time spent on maintenance operations",
       "fieldConfig": {

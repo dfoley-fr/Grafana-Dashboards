@@ -37,8 +37,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
       "description": "Index scan activity across tables",
       "fieldConfig": {
@@ -133,8 +133,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
       "description": "Tuples fetched via index scans",
       "fieldConfig": {
@@ -242,8 +242,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
       "description": "Ratio of tuples read vs fetched (efficiency)",
       "fieldConfig": {
@@ -338,8 +338,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
       "description": "Index sizes in bytes",
       "fieldConfig": {
@@ -447,8 +447,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
       "description": "Invalid indexes that need attention",
       "fieldConfig": {
@@ -524,8 +524,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
       "description": "Unused indexes with zero scans",
       "fieldConfig": {
@@ -632,8 +632,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
       "description": "Index classification by type and role",
       "fieldConfig": {

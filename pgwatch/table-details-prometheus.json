@@ -23,8 +23,8 @@
   "panels": [
     {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
       "fieldConfig": {
         "defaults": {
@@ -109,8 +109,8 @@
       "targets": [
         {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
           "exemplar": true,
           "expr": "max(increase(pgwatch_table_stats_n_tup_ins{dbname='$dbname',table_full_name=\"$table\"}[$agg_interval]))",
@@ -120,8 +120,8 @@
         },
         {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
           "exemplar": true,
           "expr": "max(increase(pgwatch_table_stats_n_tup_upd{dbname='$dbname',table_full_name=\"$table\"}[$agg_interval]))",
@@ -132,8 +132,8 @@
         },
         {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
           "exemplar": true,
           "expr": "max(increase(pgwatch_table_stats_n_tup_del{dbname='$dbname',table_full_name=\"$table\"}[$agg_interval]))",
@@ -148,8 +148,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
       "fieldConfig": {
         "defaults": {
@@ -234,8 +234,8 @@
       "targets": [
         {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
           "exemplar": true,
           "expr": "max(increase(pgwatch_table_stats_seq_scan{dbname='$dbname',table_full_name=\"$table\"}[$agg_interval]))",
@@ -249,8 +249,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
       "description": "",
       "fieldConfig": {
@@ -336,8 +336,8 @@
       "targets": [
         {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
           "exemplar": true,
           "expr": "max(pgwatch_table_stats_table_size_b{dbname='$dbname',table_full_name=\"$table\"})",
@@ -347,8 +347,8 @@
         },
         {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
           "exemplar": true,
           "expr": "max(pgwatch_table_stats_total_relation_size_b{dbname='$dbname',table_full_name=\"$table\"})",
@@ -363,8 +363,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
       "description": "",
       "fieldConfig": {
@@ -473,8 +473,8 @@
       "targets": [
         {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
           "editorMode": "code",
           "exemplar": true,
@@ -487,8 +487,8 @@
         },
         {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
           "exemplar": true,
           "expr": "100 * max(increase(pgwatch_table_io_stats_idx_blks_hit{dbname='$dbname',table_full_name=\"$table\"}[$agg_interval])) / max((increase(pgwatch_table_io_stats_idx_blks_hit{dbname='$dbname',table_full_name=\"$table\"}[$agg_interval])) + max(increase(pgwatch_table_io_stats_idx_blks_read{dbname='$dbname',table_full_name=\"$table\"}[$agg_interval])))",
@@ -499,8 +499,8 @@
         },
         {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
           "exemplar": true,
           "expr": "100 * max(increase(pgwatch_table_io_stats_toast_blks_hit{dbname='$dbname',table_full_name=\"$table\"}[$agg_interval])) / (max(increase(pgwatch_table_io_stats_toast_blks_hit{dbname='$dbname',table_full_name=\"$table\"}[$agg_interval])) + max(increase(pgwatch_table_io_stats_toast_blks_read{dbname='$dbname',table_full_name=\"$table\"}[$agg_interval])))",
@@ -511,8 +511,8 @@
         },
         {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
           "exemplar": true,
           "expr": "100 * max(increase(pgwatch_table_io_stats_tidx_blks_hit{dbname='$dbname',table_full_name=\"$table\"}[$agg_interval])) / (max(increase(pgwatch_table_io_stats_tidx_blks_hit{dbname='$dbname',table_full_name=\"$table\"}[$agg_interval])) + max(increase(pgwatch_table_io_stats_tidx_blks_read{dbname='$dbname',table_full_name=\"$table\"}[$agg_interval])))",
@@ -527,8 +527,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
       "description": "Amount of block data read from the table, including cache and TOAST",
       "fieldConfig": {
@@ -635,8 +635,8 @@
       "targets": [
         {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
           "editorMode": "code",
           "exemplar": true,
@@ -648,8 +648,8 @@
         },
         {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
           "editorMode": "code",
           "exemplar": true,
@@ -662,8 +662,8 @@
         },
         {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
           "editorMode": "code",
           "exemplar": true,
@@ -676,8 +676,8 @@
         },
         {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
           "editorMode": "code",
           "exemplar": true,
@@ -694,8 +694,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
       "description": "Including both manual VACUUM and AUTOVACUUM",
       "fieldConfig": {
@@ -749,8 +749,8 @@
       "targets": [
         {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
           "exemplar": true,
           "expr": "pgwatch_table_stats_seconds_since_last_vacuum{dbname='$dbname',table_full_name=\"$table\"}",
@@ -765,8 +765,8 @@
     },
     {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
       "description": "Including both manual ANALYZE and AUTOVACUUM",
       "fieldConfig": {
@@ -820,8 +820,8 @@
       "targets": [
         {
       "datasource": {
-        "type": "grafana-amazonprometheus-datasource",
-        "uid": "afq6r85ebh6v4c"
+        "type": "grafana-amazonprometheus-datasource"
+       
       },
           "exemplar": true,
           "expr": "pgwatch_table_stats_seconds_since_last_analyze{dbname='$dbname',table_full_name=\"$table\"}",
