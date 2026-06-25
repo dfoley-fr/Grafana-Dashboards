@@ -755,9 +755,9 @@
                "uid": "${datasource}"
             },
             "description": "AWS Account ID",
-            "includeAll": true,
+            "includeAll": false,
             "label": "Account",
-            "multi": true,
+            "multi": false,
             "name": "aws_account_id",
             "query": "label_values(rds_instance_info, aws_account_id)",
             "refresh": 2,
@@ -769,9 +769,9 @@
                "uid": "${datasource}"
             },
             "description": "AWS region",
-            "includeAll": true,
+            "includeAll": false,
             "label": "Region",
-            "multi": true,
+            "multi": false,
             "name": "aws_region",
             "query": "label_values(rds_instance_info{aws_account_id=~\"$aws_account_id\"}, aws_region)",
             "refresh": 2,
