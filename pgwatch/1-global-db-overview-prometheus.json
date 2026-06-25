@@ -2468,7 +2468,8 @@
           "value": "$__all"
         },
         "datasource": {
-          "type": "prometheus"
+          "type": "grafana-amazonprometheus-datasource",
+          "uid": "afq6r85ebh6v4c"
         },
         "definition": "label_values(pgwatch_instance_up, dbname)",
         "includeAll": true,
