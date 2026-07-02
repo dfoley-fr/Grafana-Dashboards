@@ -80,7 +80,7 @@
         "justifyMode": "center",
         "orientation": "horizontal",
         "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false },
-        "textMode": "value_and_name"
+        "textMode": "value"
       },
       "targets": [
         {
@@ -112,7 +112,7 @@
         "justifyMode": "center",
         "orientation": "horizontal",
         "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false },
-        "textMode": "value_and_name"
+        "textMode": "value"
       },
       "targets": [
         {
@@ -139,7 +139,7 @@
         "justifyMode": "center",
         "orientation": "horizontal",
         "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false },
-        "textMode": "value_and_name"
+        "textMode": "value"
       },
       "targets": [
         {
