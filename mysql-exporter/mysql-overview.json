@@ -4737,7 +4737,7 @@
         "name": "host",
         "options": [],
         "query": {
-          "query": "label_values(up{instance=~\".*rds\\.amazonaws\\.com.*\"}, instance)",
+          "query": "label_values(up{instance=~\".*rds.amazonaws.com.*\"}, instance)",
           "refId": "StandardVariableQuery"
         },
         "refresh": 1,
