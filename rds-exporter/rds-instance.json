@@ -3395,7 +3395,7 @@
             "description": "Prometheus data source",
             "label": "Data source",
             "name": "datasource",
-            "query": "prometheus",
+            "query": "grafana-amazonprometheus-datasource",
             "type": "datasource"
          },
          {
