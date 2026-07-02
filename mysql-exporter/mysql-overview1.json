@@ -1,0 +1,569 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": { "type": "grafana", "uid": "-- Grafana --" },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 1,
+  "id": null,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "collapsed": false,
+      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 0 },
+      "id": 100,
+      "panels": [],
+      "title": "Overview",
+      "type": "row"
+    },
+    {
+      "datasource": { "type": "grafana-amazonprometheus-datasource", "uid": "${datasource}" },
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [
+            { "options": { "0": { "text": "DOWN", "color": "red" }, "1": { "text": "UP", "color": "green" } }, "type": "value" }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "red", "value": null },
+              { "color": "green", "value": 1 }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 4, "w": 4, "x": 0, "y": 1 },
+      "id": 1,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "horizontal",
+        "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false },
+        "textMode": "value_and_name"
+      },
+      "pluginVersion": "10.0.0",
+      "targets": [
+        {
+          "datasource": { "type": "grafana-amazonprometheus-datasource", "uid": "${datasource}" },
+          "expr": "mysql_up{instance=~\"$instance\", job=~\"$job\"}",
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "title": "Exporter Status",
+      "type": "stat"
+    },
+    {
+      "datasource": { "type": "grafana-amazonprometheus-datasource", "uid": "${datasource}" },
+      "fieldConfig": {
+        "defaults": { "unit": "s", "color": { "mode": "thresholds" } },
+        "overrides": []
+      },
+      "gridPos": { "h": 4, "w": 4, "x": 4, "y": 1 },
+      "id": 2,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "horizontal",
+        "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false },
+        "textMode": "value_and_name"
+      },
+      "targets": [
+        {
+          "datasource": { "type": "grafana-amazonprometheus-datasource", "uid": "${datasource}" },
+          "expr": "mysql_global_status_uptime{instance=~\"$instance\", job=~\"$job\"}",
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "title": "Uptime",
+      "type": "stat"
+    },
+    {
+      "datasource": { "type": "grafana-amazonprometheus-datasource", "uid": "${datasource}" },
+      "fieldConfig": {
+        "defaults": { "unit": "short", "color": { "mode": "thresholds" },
+          "thresholds": { "mode": "absolute", "steps": [
+            { "color": "green", "value": null },
+            { "color": "yellow", "value": 0.8 }
+          ]}
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 4, "w": 4, "x": 8, "y": 1 },
+      "id": 3,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "center",
+        "orientation": "horizontal",
+        "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false },
+        "textMode": "value_and_name"
+      },
+      "targets": [
+        {
+          "datasource": { "type": "grafana-amazonprometheus-datasource", "uid": "${datasource}" },
+          "expr": "mysql_global_status_threads_connected{instance=~\"$instance\", job=~\"$job\"}",
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "title": "Threads Connected",
+      "type": "stat"
+    },
+    {
+      "datasource": { "type": "grafana-amazonprometheus-datasource", "uid": "${datasource}" },
+      "fieldConfig": {
+        "defaults": { "unit": "short", "color": { "mode": "thresholds" } },
+        "overrides": []
+      },
+      "gridPos": { "h": 4, "w": 4, "x": 12, "y": 1 },
+      "id": 4,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "center",
+        "orientation": "horizontal",
+        "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false },
+        "textMode": "value_and_name"
+      },
+      "targets": [
+        {
+          "datasource": { "type": "grafana-amazonprometheus-datasource", "uid": "${datasource}" },
+          "expr": "mysql_global_status_threads_running{instance=~\"$instance\", job=~\"$job\"}",
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "title": "Threads Running",
+      "type": "stat"
+    },
+    {
+      "datasource": { "type": "grafana-amazonprometheus-datasource", "uid": "${datasource}" },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percent",
+          "min": 0,
+          "max": 100,
+          "color": { "mode": "thresholds" },
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              { "color": "green", "value": null },
+              { "color": "yellow", "value": 70 },
+              { "color": "red", "value": 90 }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 4, "w": 4, "x": 16, "y": 1 },
+      "id": 5,
+      "options": {
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "center",
+        "orientation": "horizontal",
+        "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false },
+        "textMode": "value_and_name"
+      },
+      "targets": [
+        {
+          "datasource": { "type": "grafana-amazonprometheus-datasource", "uid": "${datasource}" },
+          "expr": "100 * mysql_global_status_threads_connected{instance=~\"$instance\", job=~\"$job\"} / mysql_global_variables_max_connections{instance=~\"$instance\", job=~\"$job\"}",
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "title": "Connection Usage %",
+      "type": "stat"
+    },
+    {
+      "datasource": { "type": "grafana-amazonprometheus-datasource", "uid": "${datasource}" },
+      "fieldConfig": {
+        "defaults": { "unit": "short", "color": { "mode": "thresholds" },
+          "thresholds": { "mode": "absolute", "steps": [
+            { "color": "green", "value": null },
+            { "color": "red", "value": 1 }
+          ]}
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 4, "w": 4, "x": 20, "y": 1 },
+      "id": 6,
+      "options": {
+        "colorMode": "background",
+        "graphMode": "none",
+        "justifyMode": "center",
+        "orientation": "horizontal",
+        "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false },
+        "textMode": "value_and_name"
+      },
+      "targets": [
+        {
+          "datasource": { "type": "grafana-amazonprometheus-datasource", "uid": "${datasource}" },
+          "expr": "mysql_slave_status_seconds_behind_master{instance=~\"$instance\", job=~\"$job\"}",
+          "legendFormat": "{{instance}} lag",
+          "refId": "A"
+        }
+      ],
+      "title": "Replica Lag (sec)",
+      "type": "stat"
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 5 },
+      "id": 101,
+      "panels": [],
+      "title": "Queries & Throughput",
+      "type": "row"
+    },
+    {
+      "datasource": { "type": "grafana-amazonprometheus-datasource", "uid": "${datasource}" },
+      "fieldConfig": {
+        "defaults": { "unit": "qps", "custom": { "drawStyle": "line", "fillOpacity": 10, "lineWidth": 1 } },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 6 },
+      "id": 7,
+      "options": {
+        "legend": { "displayMode": "table", "placement": "bottom", "calcs": ["mean", "max"] },
+        "tooltip": { "mode": "multi" }
+      },
+      "targets": [
+        {
+          "datasource": { "type": "grafana-amazonprometheus-datasource", "uid": "${datasource}" },
+          "expr": "rate(mysql_global_status_commands_total{instance=~\"$instance\", job=~\"$job\", command=~\"select|insert|update|delete\"}[5m])",
+          "legendFormat": "{{instance}} - {{command}}",
+          "refId": "A"
+        }
+      ],
+      "title": "Query Rate by Type (select/insert/update/delete)",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "grafana-amazonprometheus-datasource", "uid": "${datasource}" },
+      "fieldConfig": {
+        "defaults": { "unit": "qps", "custom": { "drawStyle": "line", "fillOpacity": 10, "lineWidth": 1 } },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 6 },
+      "id": 8,
+      "options": {
+        "legend": { "displayMode": "table", "placement": "bottom", "calcs": ["mean", "max"] },
+        "tooltip": { "mode": "multi" }
+      },
+      "targets": [
+        {
+          "datasource": { "type": "grafana-amazonprometheus-datasource", "uid": "${datasource}" },
+          "expr": "rate(mysql_global_status_queries{instance=~\"$instance\", job=~\"$job\"}[5m])",
+          "legendFormat": "{{instance}} - total queries",
+          "refId": "A"
+        },
+        {
+          "datasource": { "type": "grafana-amazonprometheus-datasource", "uid": "${datasource}" },
+          "expr": "rate(mysql_global_status_slow_queries{instance=~\"$instance\", job=~\"$job\"}[5m])",
+          "legendFormat": "{{instance}} - slow queries",
+          "refId": "B"
+        }
+      ],
+      "title": "Total Queries vs Slow Queries (rate)",
+      "type": "timeseries"
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 14 },
+      "id": 102,
+      "panels": [],
+      "title": "InnoDB",
+      "type": "row"
+    },
+    {
+      "datasource": { "type": "grafana-amazonprometheus-datasource", "uid": "${datasource}" },
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percent",
+          "min": 0,
+          "max": 100,
+          "custom": { "drawStyle": "line", "fillOpacity": 10, "lineWidth": 1 }
+        },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 15 },
+      "id": 9,
+      "options": {
+        "legend": { "displayMode": "table", "placement": "bottom", "calcs": ["mean", "min"] },
+        "tooltip": { "mode": "multi" }
+      },
+      "targets": [
+        {
+          "datasource": { "type": "grafana-amazonprometheus-datasource", "uid": "${datasource}" },
+          "expr": "100 * (1 - (rate(mysql_global_status_innodb_buffer_pool_reads{instance=~\"$instance\", job=~\"$job\"}[5m]) / rate(mysql_global_status_innodb_buffer_pool_read_requests{instance=~\"$instance\", job=~\"$job\"}[5m])))",
+          "legendFormat": "{{instance}}",
+          "refId": "A"
+        }
+      ],
+      "title": "InnoDB Buffer Pool Hit Ratio",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "grafana-amazonprometheus-datasource", "uid": "${datasource}" },
+      "fieldConfig": {
+        "defaults": { "unit": "ops", "custom": { "drawStyle": "line", "fillOpacity": 10, "lineWidth": 1 } },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 15 },
+      "id": 10,
+      "options": {
+        "legend": { "displayMode": "table", "placement": "bottom", "calcs": ["mean", "max"] },
+        "tooltip": { "mode": "multi" }
+      },
+      "targets": [
+        {
+          "datasource": { "type": "grafana-amazonprometheus-datasource", "uid": "${datasource}" },
+          "expr": "rate(mysql_global_status_innodb_row_ops_total{instance=~\"$instance\", job=~\"$job\"}[5m])",
+          "legendFormat": "{{instance}} - {{operation}}",
+          "refId": "A"
+        }
+      ],
+      "title": "InnoDB Row Operations (read/inserted/updated/deleted)",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "grafana-amazonprometheus-datasource", "uid": "${datasource}" },
+      "fieldConfig": {
+        "defaults": { "unit": "bytes", "custom": { "drawStyle": "line", "fillOpacity": 10, "lineWidth": 1 } },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 23 },
+      "id": 11,
+      "options": {
+        "legend": { "displayMode": "table", "placement": "bottom", "calcs": ["mean", "max"] },
+        "tooltip": { "mode": "multi" }
+      },
+      "targets": [
+        {
+          "datasource": { "type": "grafana-amazonprometheus-datasource", "uid": "${datasource}" },
+          "expr": "mysql_global_variables_innodb_buffer_pool_size{instance=~\"$instance\", job=~\"$job\"}",
+          "legendFormat": "{{instance}} - configured size",
+          "refId": "A"
+        },
+        {
+          "datasource": { "type": "grafana-amazonprometheus-datasource", "uid": "${datasource}" },
+          "expr": "mysql_global_status_innodb_buffer_pool_bytes_data{instance=~\"$instance\", job=~\"$job\"}",
+          "legendFormat": "{{instance}} - data bytes",
+          "refId": "B"
+        }
+      ],
+      "title": "InnoDB Buffer Pool Size vs Usage",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "grafana-amazonprometheus-datasource", "uid": "${datasource}" },
+      "fieldConfig": {
+        "defaults": { "unit": "short", "custom": { "drawStyle": "line", "fillOpacity": 10, "lineWidth": 1 } },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 23 },
+      "id": 12,
+      "options": {
+        "legend": { "displayMode": "table", "placement": "bottom", "calcs": ["mean", "max"] },
+        "tooltip": { "mode": "multi" }
+      },
+      "targets": [
+        {
+          "datasource": { "type": "grafana-amazonprometheus-datasource", "uid": "${datasource}" },
+          "expr": "rate(mysql_global_status_innodb_deadlocks{instance=~\"$instance\", job=~\"$job\"}[5m])",
+          "legendFormat": "{{instance}} - deadlocks/s",
+          "refId": "A"
+        }
+      ],
+      "title": "InnoDB Deadlock Rate",
+      "type": "timeseries"
+    },
+    {
+      "collapsed": false,
+      "gridPos": { "h": 1, "w": 24, "x": 0, "y": 31 },
+      "id": 103,
+      "panels": [],
+      "title": "Connections, Locks & Network",
+      "type": "row"
+    },
+    {
+      "datasource": { "type": "grafana-amazonprometheus-datasource", "uid": "${datasource}" },
+      "fieldConfig": {
+        "defaults": { "unit": "cps", "custom": { "drawStyle": "line", "fillOpacity": 10, "lineWidth": 1 } },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 32 },
+      "id": 13,
+      "options": {
+        "legend": { "displayMode": "table", "placement": "bottom", "calcs": ["mean", "max"] },
+        "tooltip": { "mode": "multi" }
+      },
+      "targets": [
+        {
+          "datasource": { "type": "grafana-amazonprometheus-datasource", "uid": "${datasource}" },
+          "expr": "rate(mysql_global_status_connections{instance=~\"$instance\", job=~\"$job\"}[5m])",
+          "legendFormat": "{{instance}} - new connections/s",
+          "refId": "A"
+        },
+        {
+          "datasource": { "type": "grafana-amazonprometheus-datasource", "uid": "${datasource}" },
+          "expr": "rate(mysql_global_status_aborted_connects{instance=~\"$instance\", job=~\"$job\"}[5m])",
+          "legendFormat": "{{instance}} - aborted connects/s",
+          "refId": "B"
+        }
+      ],
+      "title": "Connection Rate & Aborted Connects",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "grafana-amazonprometheus-datasource", "uid": "${datasource}" },
+      "fieldConfig": {
+        "defaults": { "unit": "short", "custom": { "drawStyle": "line", "fillOpacity": 10, "lineWidth": 1 } },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 32 },
+      "id": 14,
+      "options": {
+        "legend": { "displayMode": "table", "placement": "bottom", "calcs": ["mean", "max"] },
+        "tooltip": { "mode": "multi" }
+      },
+      "targets": [
+        {
+          "datasource": { "type": "grafana-amazonprometheus-datasource", "uid": "${datasource}" },
+          "expr": "rate(mysql_global_status_table_locks_waited{instance=~\"$instance\", job=~\"$job\"}[5m])",
+          "legendFormat": "{{instance}} - table locks waited/s",
+          "refId": "A"
+        }
+      ],
+      "title": "Table Lock Waits",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "grafana-amazonprometheus-datasource", "uid": "${datasource}" },
+      "fieldConfig": {
+        "defaults": { "unit": "Bps", "custom": { "drawStyle": "line", "fillOpacity": 10, "lineWidth": 1 } },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 40 },
+      "id": 15,
+      "options": {
+        "legend": { "displayMode": "table", "placement": "bottom", "calcs": ["mean", "max"] },
+        "tooltip": { "mode": "multi" }
+      },
+      "targets": [
+        {
+          "datasource": { "type": "grafana-amazonprometheus-datasource", "uid": "${datasource}" },
+          "expr": "rate(mysql_global_status_bytes_received{instance=~\"$instance\", job=~\"$job\"}[5m])",
+          "legendFormat": "{{instance}} - received",
+          "refId": "A"
+        },
+        {
+          "datasource": { "type": "grafana-amazonprometheus-datasource", "uid": "${datasource}" },
+          "expr": "rate(mysql_global_status_bytes_sent{instance=~\"$instance\", job=~\"$job\"}[5m])",
+          "legendFormat": "{{instance}} - sent",
+          "refId": "B"
+        }
+      ],
+      "title": "Network Traffic",
+      "type": "timeseries"
+    },
+    {
+      "datasource": { "type": "grafana-amazonprometheus-datasource", "uid": "${datasource}" },
+      "fieldConfig": {
+        "defaults": { "unit": "short", "custom": { "drawStyle": "line", "fillOpacity": 10, "lineWidth": 1 } },
+        "overrides": []
+      },
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 40 },
+      "id": 16,
+      "options": {
+        "legend": { "displayMode": "table", "placement": "bottom", "calcs": ["mean", "max"] },
+        "tooltip": { "mode": "multi" }
+      },
+      "targets": [
+        {
+          "datasource": { "type": "grafana-amazonprometheus-datasource", "uid": "${datasource}" },
+          "expr": "mysql_global_status_open_files{instance=~\"$instance\", job=~\"$job\"}",
+          "legendFormat": "{{instance}} - open files",
+          "refId": "A"
+        },
+        {
+          "datasource": { "type": "grafana-amazonprometheus-datasource", "uid": "${datasource}" },
+          "expr": "mysql_global_status_open_tables{instance=~\"$instance\", job=~\"$job\"}",
+          "legendFormat": "{{instance}} - open tables",
+          "refId": "B"
+        }
+      ],
+      "title": "Open Files & Tables",
+      "type": "timeseries"
+    }
+  ],
+  "refresh": "1m",
+  "schemaVersion": 38,
+  "style": "dark",
+  "tags": ["mysql", "rds", "mysqld_exporter"],
+  "templating": {
+    "list": [
+      {
+        "current": {},
+        "hide": 0,
+        "label": "Datasource",
+        "name": "datasource",
+        "query": "grafana-amazonprometheus-datasource",
+        "refresh": 1,
+        "type": "datasource"
+      },
+      {
+        "current": { "text": "All", "value": "$__all" },
+        "datasource": { "type": "grafana-amazonprometheus-datasource", "uid": "${datasource}" },
+        "definition": "label_values(mysql_up, job)",
+        "hide": 0,
+        "includeAll": true,
+        "label": "Job",
+        "multi": true,
+        "name": "job",
+        "query": { "query": "label_values(mysql_up, job)", "refId": "StandardVariableQuery" },
+        "refresh": 2,
+        "sort": 1,
+        "type": "query"
+      },
+      {
+        "current": { "text": "All", "value": "$__all" },
+        "datasource": { "type": "grafana-amazonprometheus-datasource", "uid": "${datasource}" },
+        "definition": "label_values(mysql_up{job=~\"$job\"}, instance)",
+        "hide": 0,
+        "includeAll": true,
+        "label": "RDS Instance",
+        "multi": true,
+        "name": "instance",
+        "query": { "query": "label_values(mysql_up{job=~\"$job\"}, instance)", "refId": "StandardVariableQuery" },
+        "refresh": 2,
+        "sort": 1,
+        "type": "query"
+      }
+    ]
+  },
+  "time": { "from": "now-6h", "to": "now" },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "RDS MySQL Exporter Dashboard",
+  "uid": "rds-mysqld-exporter",
+  "version": 1,
+  "weekStart": ""
+}
