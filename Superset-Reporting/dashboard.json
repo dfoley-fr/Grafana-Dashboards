@@ -31,7 +31,7 @@
       }
     ],
     "cursorSync": "Crosshair",
-    "description": "Observability for superset-reporting-mediator: HTTP traffic, latency, errors, S3 transfers, SQS API calls, message-processing attempts, Superset authentication, and Superset service operations.",
+    "description": "Observability for superset-reporting-mediator: HTTP traffic, latency, errors, S3 transfers, SQS API calls, message-processing attempts, Superset authentication, Superset service operations, end-to-end report outcomes, file validation, and local disk usage.",
     "editable": true,
     "elements": {
       "panel-1": {
@@ -3592,6 +3592,160 @@
                 }
               }
             }
+          },
+          {
+            "kind": "RowsLayoutRow",
+            "spec": {
+              "title": "📝 Report Outcomes",
+              "collapse": false,
+              "layout": {
+                "kind": "GridLayout",
+                "spec": {
+                  "items": [
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 0, "y": 0, "width": 12, "height": 4,
+                        "element": { "kind": "ElementReference", "name": "panel-101" }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 12, "y": 0, "width": 12, "height": 4,
+                        "element": { "kind": "ElementReference", "name": "panel-103" }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 0, "y": 4, "width": 12, "height": 8,
+                        "element": { "kind": "ElementReference", "name": "panel-100" }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 12, "y": 4, "width": 12, "height": 8,
+                        "element": { "kind": "ElementReference", "name": "panel-102" }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "kind": "RowsLayoutRow",
+            "spec": {
+              "title": "✅ Validation Performance",
+              "collapse": false,
+              "layout": {
+                "kind": "GridLayout",
+                "spec": {
+                  "items": [
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 0, "y": 0, "width": 12, "height": 8,
+                        "element": { "kind": "ElementReference", "name": "panel-110" }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 12, "y": 0, "width": 12, "height": 8,
+                        "element": { "kind": "ElementReference", "name": "panel-111" }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "kind": "RowsLayoutRow",
+            "spec": {
+              "title": "🔁 SQS Message Outcomes & Health",
+              "collapse": false,
+              "layout": {
+                "kind": "GridLayout",
+                "spec": {
+                  "items": [
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 0, "y": 0, "width": 24, "height": 4,
+                        "element": { "kind": "ElementReference", "name": "panel-122" }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 0, "y": 4, "width": 12, "height": 8,
+                        "element": { "kind": "ElementReference", "name": "panel-120" }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 12, "y": 4, "width": 12, "height": 8,
+                        "element": { "kind": "ElementReference", "name": "panel-121" }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "kind": "RowsLayoutRow",
+            "spec": {
+              "title": "💾 Local Disk Usage",
+              "collapse": false,
+              "layout": {
+                "kind": "GridLayout",
+                "spec": {
+                  "items": [
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 0, "y": 0, "width": 12, "height": 4,
+                        "element": { "kind": "ElementReference", "name": "panel-130" }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 12, "y": 0, "width": 12, "height": 4,
+                        "element": { "kind": "ElementReference", "name": "panel-131" }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "kind": "RowsLayoutRow",
+            "spec": {
+              "title": "📊 Chart Data by Backend",
+              "collapse": false,
+              "layout": {
+                "kind": "GridLayout",
+                "spec": {
+                  "items": [
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 0, "y": 0, "width": 24, "height": 8,
+                        "element": { "kind": "ElementReference", "name": "panel-140" }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
           }
         ]
       }
@@ -3599,7 +3753,7 @@
     "links": [],
     "liveNow": false,
     "preload": false,
-    "tags": ["fastapi", "superset", "mediator", "prometheus", "s3", "sqs", "superset-auth", "superset-service"],
+    "tags": ["fastapi", "superset", "mediator", "prometheus", "s3", "sqs", "superset-auth", "superset-service", "reports", "validation"],
     "timeSettings": {
       "timezone": "browser",
       "from": "now-1h",
