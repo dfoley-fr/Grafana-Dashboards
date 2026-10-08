@@ -31,7 +31,7 @@
       }
     ],
     "cursorSync": "Crosshair",
-    "description": "Observability for superset-reporting-mediator: HTTP traffic, latency, errors, S3 transfers, SQS API calls, and message-processing attempts.",
+    "description": "Observability for superset-reporting-mediator: HTTP traffic, latency, errors, S3 transfers, SQS API calls, message-processing attempts, Superset authentication, and Superset service operations.",
     "editable": true,
     "elements": {
       "panel-1": {
@@ -1924,6 +1924,512 @@
             }
           }
         }
+      },
+      "panel-80": {
+        "kind": "Panel",
+        "spec": {
+          "id": 80,
+          "title": "Superset Auth Operations / sec",
+          "description": "Completed Superset login/refresh/token-fetch operations per second by operation and outcome, including cancellations.",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "grafana-amazonprometheus-datasource",
+                      "version": "v0",
+                      "spec": {
+                        "expr": "sum by (operation, outcome) (rate(superset_auth_operations_total{job=\"superset-reporting-mediator\"}[$__rate_interval]))",
+                        "legendFormat": "{{ operation }} / {{ outcome }}"
+                      },
+                      "labels": { "grafana.app/export-label": "prometheus-1" }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "timeseries",
+            "version": "",
+            "spec": {
+              "options": {
+                "legend": { "calcs": ["mean", "max"], "displayMode": "table", "placement": "bottom", "showLegend": true },
+                "tooltip": { "mode": "multi", "sort": "desc" }
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "unit": "ops",
+                  "min": 0,
+                  "color": { "mode": "palette-classic" },
+                  "custom": {
+                    "drawStyle": "line",
+                    "fillOpacity": 15,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 2,
+                    "showPoints": "never",
+                    "spanNulls": false,
+                    "stacking": { "group": "A", "mode": "none" }
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-81": {
+        "kind": "Panel",
+        "spec": {
+          "id": 81,
+          "title": "Superset Auth Errors (Selected Period)",
+          "description": "Estimated failed Superset authentication operation count over the selected period. No data is not automatically treated as zero; outcome series may not exist before their first observation.",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "grafana-amazonprometheus-datasource",
+                      "version": "v0",
+                      "spec": {
+                        "expr": "sum by (operation) (increase(superset_auth_operations_total{job=\"superset-reporting-mediator\",outcome=\"error\"}[$__range]))",
+                        "instant": true,
+                        "range": false,
+                        "legendFormat": "{{ operation }}"
+                      },
+                      "labels": { "grafana.app/export-label": "prometheus-1" }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "stat",
+            "version": "",
+            "spec": {
+              "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false },
+                "textMode": "value_and_name"
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "unit": "short",
+                  "min": 0,
+                  "color": { "mode": "thresholds" },
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      { "value": null, "color": "green" },
+                      { "value": 1, "color": "red" }
+                    ]
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-82": {
+        "kind": "Panel",
+        "spec": {
+          "id": 82,
+          "title": "Superset Auth P95 Duration",
+          "description": "Estimated 95th percentile duration of Superset login, refresh, and token-fetch operations.",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "grafana-amazonprometheus-datasource",
+                      "version": "v0",
+                      "spec": {
+                        "expr": "histogram_quantile(0.95, sum by (operation, le) (rate(superset_auth_operation_duration_seconds_bucket{job=\"superset-reporting-mediator\"}[$__rate_interval])))",
+                        "legendFormat": "{{ operation }}"
+                      },
+                      "labels": { "grafana.app/export-label": "prometheus-1" }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "timeseries",
+            "version": "",
+            "spec": {
+              "options": {
+                "legend": { "calcs": ["mean", "max"], "displayMode": "table", "placement": "bottom", "showLegend": true },
+                "tooltip": { "mode": "multi", "sort": "desc" }
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "unit": "s",
+                  "min": 0,
+                  "color": { "mode": "palette-classic" },
+                  "custom": {
+                    "drawStyle": "line",
+                    "fillOpacity": 10,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 2,
+                    "showPoints": "never",
+                    "spanNulls": false
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-83": {
+        "kind": "Panel",
+        "spec": {
+          "id": 83,
+          "title": "Active Superset Auth Operations",
+          "description": "Current Superset authentication operations in progress across scraped service instances. Higher concurrency is not automatically an error.",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "grafana-amazonprometheus-datasource",
+                      "version": "v0",
+                      "spec": {
+                        "expr": "sum by (operation) (superset_auth_operations_in_progress{job=\"superset-reporting-mediator\"})",
+                        "instant": true,
+                        "range": false,
+                        "legendFormat": "{{ operation }}"
+                      },
+                      "labels": { "grafana.app/export-label": "prometheus-1" }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "stat",
+            "version": "",
+            "spec": {
+              "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false },
+                "textMode": "value_and_name"
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "unit": "short",
+                  "min": 0,
+                  "decimals": 0,
+                  "color": { "mode": "fixed", "fixedColor": "blue" }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-90": {
+        "kind": "Panel",
+        "spec": {
+          "id": 90,
+          "title": "Superset Service Operations / sec",
+          "description": "Completed Superset service operations per second (roles, permissions, dashboards, charts, chart data) by operation and outcome, including cancellations.",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "grafana-amazonprometheus-datasource",
+                      "version": "v0",
+                      "spec": {
+                        "expr": "sum by (operation, outcome) (rate(superset_operations_total{job=\"superset-reporting-mediator\"}[$__rate_interval]))",
+                        "legendFormat": "{{ operation }} / {{ outcome }}"
+                      },
+                      "labels": { "grafana.app/export-label": "prometheus-1" }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "timeseries",
+            "version": "",
+            "spec": {
+              "options": {
+                "legend": { "calcs": ["mean", "max"], "displayMode": "table", "placement": "bottom", "showLegend": true },
+                "tooltip": { "mode": "multi", "sort": "desc" }
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "unit": "ops",
+                  "min": 0,
+                  "color": { "mode": "palette-classic" },
+                  "custom": {
+                    "drawStyle": "line",
+                    "fillOpacity": 15,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 2,
+                    "showPoints": "never",
+                    "spanNulls": false,
+                    "stacking": { "group": "A", "mode": "none" }
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-91": {
+        "kind": "Panel",
+        "spec": {
+          "id": 91,
+          "title": "Superset Service Errors (Selected Period)",
+          "description": "Estimated failed Superset service operation count over the selected period. No data is not automatically treated as zero; outcome series may not exist before their first observation.",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "grafana-amazonprometheus-datasource",
+                      "version": "v0",
+                      "spec": {
+                        "expr": "sum by (operation) (increase(superset_operations_total{job=\"superset-reporting-mediator\",outcome=\"error\"}[$__range]))",
+                        "instant": true,
+                        "range": false,
+                        "legendFormat": "{{ operation }}"
+                      },
+                      "labels": { "grafana.app/export-label": "prometheus-1" }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "stat",
+            "version": "",
+            "spec": {
+              "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false },
+                "textMode": "value_and_name"
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "unit": "short",
+                  "min": 0,
+                  "color": { "mode": "thresholds" },
+                  "thresholds": {
+                    "mode": "absolute",
+                    "steps": [
+                      { "value": null, "color": "green" },
+                      { "value": 1, "color": "red" }
+                    ]
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-92": {
+        "kind": "Panel",
+        "spec": {
+          "id": 92,
+          "title": "Superset Service P95 Duration",
+          "description": "Estimated 95th percentile duration of Superset service operations, including dependent API calls and downstream S3 downloads.",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "grafana-amazonprometheus-datasource",
+                      "version": "v0",
+                      "spec": {
+                        "expr": "histogram_quantile(0.95, sum by (operation, le) (rate(superset_operation_duration_seconds_bucket{job=\"superset-reporting-mediator\"}[$__rate_interval])))",
+                        "legendFormat": "{{ operation }}"
+                      },
+                      "labels": { "grafana.app/export-label": "prometheus-1" }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "timeseries",
+            "version": "",
+            "spec": {
+              "options": {
+                "legend": { "calcs": ["mean", "max"], "displayMode": "table", "placement": "bottom", "showLegend": true },
+                "tooltip": { "mode": "multi", "sort": "desc" }
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "unit": "s",
+                  "min": 0,
+                  "color": { "mode": "palette-classic" },
+                  "custom": {
+                    "drawStyle": "line",
+                    "fillOpacity": 10,
+                    "lineInterpolation": "linear",
+                    "lineWidth": 2,
+                    "showPoints": "never",
+                    "spanNulls": false
+                  }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
+      },
+      "panel-93": {
+        "kind": "Panel",
+        "spec": {
+          "id": 93,
+          "title": "Active Superset Service Operations",
+          "description": "Current Superset service operations in progress across scraped service instances. Higher concurrency is not automatically an error.",
+          "links": [],
+          "data": {
+            "kind": "QueryGroup",
+            "spec": {
+              "queries": [
+                {
+                  "kind": "PanelQuery",
+                  "spec": {
+                    "query": {
+                      "kind": "DataQuery",
+                      "group": "grafana-amazonprometheus-datasource",
+                      "version": "v0",
+                      "spec": {
+                        "expr": "sum by (operation) (superset_operations_in_progress{job=\"superset-reporting-mediator\"})",
+                        "instant": true,
+                        "range": false,
+                        "legendFormat": "{{ operation }}"
+                      },
+                      "labels": { "grafana.app/export-label": "prometheus-1" }
+                    },
+                    "refId": "A",
+                    "hidden": false
+                  }
+                }
+              ],
+              "transformations": [],
+              "queryOptions": {}
+            }
+          },
+          "vizConfig": {
+            "kind": "VizConfig",
+            "group": "stat",
+            "version": "",
+            "spec": {
+              "options": {
+                "colorMode": "value",
+                "graphMode": "none",
+                "justifyMode": "center",
+                "orientation": "auto",
+                "reduceOptions": { "calcs": ["lastNotNull"], "fields": "", "values": false },
+                "textMode": "value_and_name"
+              },
+              "fieldConfig": {
+                "defaults": {
+                  "unit": "short",
+                  "min": 0,
+                  "decimals": 0,
+                  "color": { "mode": "fixed", "fixedColor": "blue" }
+                },
+                "overrides": []
+              }
+            }
+          }
+        }
       }
     },
     "layout": {
@@ -2230,6 +2736,90 @@
                 }
               }
             }
+          },
+          {
+            "kind": "RowsLayoutRow",
+            "spec": {
+              "title": "🔐 Superset Auth Performance",
+              "collapse": false,
+              "layout": {
+                "kind": "GridLayout",
+                "spec": {
+                  "items": [
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 0, "y": 0, "width": 12, "height": 4,
+                        "element": { "kind": "ElementReference", "name": "panel-83" }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 12, "y": 0, "width": 12, "height": 4,
+                        "element": { "kind": "ElementReference", "name": "panel-81" }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 0, "y": 4, "width": 12, "height": 8,
+                        "element": { "kind": "ElementReference", "name": "panel-80" }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 12, "y": 4, "width": 12, "height": 8,
+                        "element": { "kind": "ElementReference", "name": "panel-82" }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "kind": "RowsLayoutRow",
+            "spec": {
+              "title": "📊 Superset Service Performance",
+              "collapse": false,
+              "layout": {
+                "kind": "GridLayout",
+                "spec": {
+                  "items": [
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 0, "y": 0, "width": 12, "height": 4,
+                        "element": { "kind": "ElementReference", "name": "panel-93" }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 12, "y": 0, "width": 12, "height": 4,
+                        "element": { "kind": "ElementReference", "name": "panel-91" }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 0, "y": 4, "width": 12, "height": 8,
+                        "element": { "kind": "ElementReference", "name": "panel-90" }
+                      }
+                    },
+                    {
+                      "kind": "GridLayoutItem",
+                      "spec": {
+                        "x": 12, "y": 4, "width": 12, "height": 8,
+                        "element": { "kind": "ElementReference", "name": "panel-92" }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
           }
         ]
       }
@@ -2237,7 +2827,7 @@
     "links": [],
     "liveNow": false,
     "preload": false,
-    "tags": ["fastapi", "superset", "mediator", "prometheus", "s3", "sqs"],
+    "tags": ["fastapi", "superset", "mediator", "prometheus", "s3", "sqs", "superset-auth", "superset-service"],
     "timeSettings": {
       "timezone": "browser",
       "from": "now-1h",
